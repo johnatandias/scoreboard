@@ -9,15 +9,15 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
     "redux": "^4.0.4",
-    "redux-persist": "^6.0.0"
-  },
-  "devDependencies": {
+    "redux-persist": "^6.0.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.3",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
     "@types/react-redux": "^7.1.2",
-    "@types/react-router-dom": "^4.3.5",
+    "@types/react-router-dom": "^4.3.5"
+  },
+  "devDependencies": {
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
     "typescript": "3.6.2"
