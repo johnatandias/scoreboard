@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+:root[theme="light"] {
+  --header-background-color: #6200EE;
+}

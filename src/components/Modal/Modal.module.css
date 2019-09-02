@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  background-color: #FFF;
+  height: auto;
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  display: flex;
+}

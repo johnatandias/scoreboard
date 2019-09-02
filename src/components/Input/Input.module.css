@@ -1,0 +1,42 @@
+.container {
+  position: relative;
+  min-height: 60px;
+  width: 100%;
+}
+
+.input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #757575;
+  margin-top: 10px;
+}
+
+.input:focus {
+  outline: none;
+  border-bottom: 2px solid #5264ae;
+}
+
+.label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 20px;
+  transition: 0.2s ease all;
+}
+
+.input[value]:not([value=""])~.label {
+  top: 7px;
+  font-size: 10px;
+  color: #5264ae;
+}
+
+.error {
+  color: red;
+  font-size: 10px;
+}

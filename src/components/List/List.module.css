@@ -1,0 +1,9 @@
+.list {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding: 0 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}

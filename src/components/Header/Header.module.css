@@ -1,0 +1,25 @@
+.header {
+  display: flex;
+  min-height: 50px;
+  background-color: var(--header-background-color);
+  padding: 0 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menuAndTitle {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+}

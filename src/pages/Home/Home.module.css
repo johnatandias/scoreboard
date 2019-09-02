@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  padding: 10px;
+  height: 100%;
+  flex-direction: column;
+}
+
+.noPlayers {
+  margin: auto;
+}
