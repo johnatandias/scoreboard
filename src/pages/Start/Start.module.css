@@ -10,6 +10,21 @@
   user-select: none;
 }
 
+.iconNameAndScore {
+  display: flex;
+}
+
+.position {
+  font-size: 25px;
+  color: #757575;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: #DFDFDF;
+  margin-right: 7px;
+  padding-right: 5px;
+  line-height: 35px;
+}
+
 .nameAndScore {
   display: flex;
   flex-direction: column;

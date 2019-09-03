@@ -19,5 +19,8 @@
     "settings": "Configurações",
     "language-english": "English",
     "language-portuguese": "Português"
+  },
+  "start": {
+    "position": "{{position}}º"
   }
 }
