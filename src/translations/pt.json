@@ -1,0 +1,23 @@
+{
+  "app": {
+    "title": "Placar"
+  },
+  "home": {
+    "no-players": "Nenhum jogador cadastrado!"
+  },
+  "modal": {
+    "new-player": "Adicionar novo jogador",
+    "input-name-error": "Por favor, insira um nome válido!",
+    "new-player-input-label": "Nome",
+    "new-player-add-button": "Adicionar",
+    "edit-player": "Editar jogador",
+    "edit-player-input-label": "Nome",
+    "edit-player-delete-button": "Apagar",
+    "edit-player-rename-button": "Renomear"
+  },
+  "settings": {
+    "settings": "Configurações",
+    "language-english": "English",
+    "language-portuguese": "Português"
+  }
+}

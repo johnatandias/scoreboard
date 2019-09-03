@@ -1,0 +1,16 @@
+.floatingMenu {
+  position: absolute;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  top: 40px;
+  right: 15px;
+}
+
+.itemLabel {
+  min-height: 40px;
+  line-height: 40px;
+}

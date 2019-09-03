@@ -1,0 +1,23 @@
+{
+  "app": {
+    "title": "Scoreboard"
+  },
+  "home": {
+    "no-players": "No registered players!"
+  },
+  "modal": {
+    "new-player": "Add new player",
+    "input-name-error": "Please, insert a valid name!",
+    "new-player-input-label": "Name",
+    "new-player-add-button": "Add",
+    "edit-player": "Edit player",
+    "edit-player-input-label": "Name",
+    "edit-player-delete-button": "Delete",
+    "edit-player-rename-button": "Rename"
+  },
+  "settings": {
+    "settings": "Settings",
+    "language-english": "English",
+    "language-portuguese": "Português"
+  }
+}

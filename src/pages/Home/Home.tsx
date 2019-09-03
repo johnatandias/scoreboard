@@ -1,27 +1,33 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { RouteComponentProps } from 'react-router-dom';
 import { IStore } from 'store';
-import { List, Header, Add, Start } from 'components';
+import { List, Header } from 'components';
+import { Add, Start } from 'icons';
 import { Player } from 'reducers';
 import { openAddPlayerModal, openEditPlayerModal } from 'actions';
+import { useTranslation } from 'react-i18next';
 import css from './Home.module.css';
-import { RouteComponentProps } from 'react-router-dom';
 
-const NoPlayers: React.FC = () => (
-  <section className={css.noPlayers}>
-    <span>No registered players!</span>
-  </section>
-);
+const NoPlayers: React.FC = () => {
+  const [t] = useTranslation();
+  return (
+    <section className={css.noPlayers}>
+      <span>{t('home:no-players')}</span>
+    </section>
+  )
+};
 
 export const Home: React.FC<RouteComponentProps> = ({ history }) => {
   const players = useSelector((state: IStore) => state.playerState);
   const dispatch = useDispatch();
+  const [t] = useTranslation();
 
   return (
     <React.Fragment>
-      <Header title="Scoreboard">
+      <Header title={t('app:title')}>
         <Add color="white" onClick={() => dispatch(openAddPlayerModal)} />
-        {Boolean(players.length) && (
+        {Boolean(players.length > 1) && (
           <Start onClick={() => history.push('/start')} />
         )}
       </Header>

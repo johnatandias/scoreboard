@@ -1,10 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react';
 import { Modal } from 'components';
 import { store, persistor } from 'store';
 import { Home, Start } from 'pages';
+import { config } from 'translations';
+import { initReactI18next, withTranslation } from 'react-i18next';
+import i18n from 'i18next';
+
+i18n.use(initReactI18next).init({ ...config });
 
 const App: React.FC = () => (
   <Provider store={store}>
@@ -19,4 +24,4 @@ const App: React.FC = () => (
   </Provider>
 );
 
-export default App;
+export default withTranslation()(App);

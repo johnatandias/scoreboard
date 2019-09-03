@@ -1,10 +1,17 @@
 import React, { useRef, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useOnClickOutside } from 'hooks';
-import { addPlayer, closeModal, ModalTypes, editPlayer, deletePlayer } from 'actions';
+import { useTranslation } from 'react-i18next';
 import { IStore } from 'store';
 import { Input, Button } from 'components';
+import {
+  addPlayer,
+  closeModal,
+  ModalTypes,
+  editPlayer,
+  deletePlayer,
+} from 'actions';
 import css from './Modal.module.css';
+import { Overlay } from 'components/Overlay/Overlay';
 
 const Header: React.FC<{ title: string }> = ({ title }) => (
   <span className={css.title}>{title}</span>
@@ -23,11 +30,12 @@ const AddPlayer: React.FC = () => {
   const [error, setError] = useState('');
 
   const dispatch = useDispatch();
+  const [t] = useTranslation();
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setPlayer(value);
-    setError(value.trim().length ? '' : 'Please, insert a valid name!');
+    setError(value.trim().length ? '' : t('modal:input-name-error'));
   };
 
   const savePlayer = () => {
@@ -39,12 +47,12 @@ const AddPlayer: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Header title="Add new player" />
+      <Header title={t('modal:new-player')} />
 
       <Content>
         <Input
           type="text"
-          label="Name"
+          label={t('modal:new-player-input-label')}
           onInputChange={onInputChange}
           error={error}
           value={player}
@@ -52,7 +60,7 @@ const AddPlayer: React.FC = () => {
       </Content>
 
       <Footer>
-        <Button label="Add" onClick={savePlayer} />
+        <Button label={t('modal:new-player-add-button')} onClick={savePlayer} />
       </Footer>
     </React.Fragment>
   );
@@ -63,11 +71,12 @@ const EditPlayer: React.FC<{ name: string }> = ({ name }) => {
   const [error, setError] = useState('');
 
   const dispatch = useDispatch();
+  const [t] = useTranslation();
 
   const onInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     setPlayer(value);
-    setError(value.trim().length ? '' : 'Please, insert a valid name!');
+    setError(value.trim().length ? '' : t('modal:input-name-error'));
   };
 
   const saveChanges = () => {
@@ -84,30 +93,36 @@ const EditPlayer: React.FC<{ name: string }> = ({ name }) => {
 
   return (
     <React.Fragment>
-      <Header title="Edit player" />
+      <Header title={t('modal:edit-player')} />
 
       <Content>
         <Input
           type="text"
-          label="Name"
+          label={t('modal:edit-player-input-label')}
           onInputChange={onInputChange}
           error={error}
           value={player}
         />
 
         <Footer>
-          <Button label="Delete" onClick={deletePlayerByName} color="#B00020" />
-          <Button label="Rename" onClick={saveChanges} />
+          <Button
+            label={t('modal:edit-player-delete-button')}
+            onClick={deletePlayerByName}
+            color="#B00020"
+          />
+          <Button
+            label={t('modal:edit-player-rename-button')}
+            onClick={saveChanges}
+          />
         </Footer>
       </Content>
     </React.Fragment>
   );
 };
 
-export const Modal = () => {
+export const Modal: React.FC = () => {
   const dispatch = useDispatch();
   const modalReference = useRef<HTMLDivElement>(null);
-  useOnClickOutside(modalReference, () => dispatch(closeModal));
 
   const modal = useSelector((state: IStore) => state.modalState);
   if (!modal.opened) return null;
@@ -127,10 +142,14 @@ export const Modal = () => {
   }
 
   return (
-    <div className={css.container}>
+    <Overlay
+      childrenReference={modalReference}
+      className={css.container}
+      onClose={() => dispatch(closeModal)}
+    >
       <div ref={modalReference} className={css.modal}>
         {RenderModal}
       </div>
-    </div>
+    </Overlay>
   );
 };

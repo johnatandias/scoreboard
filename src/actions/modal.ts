@@ -1,6 +1,7 @@
 export enum ModalTypes {
   ADD_PLAYER = 'addPlayer',
   EDIT_PLAYER = 'editPlayer',
+  LANGUAGE_SETTINGS = 'languageSettings',
   CLOSE_MODAL = 'closeModal',
 }
 
