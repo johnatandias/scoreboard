@@ -2,6 +2,7 @@
   "name": "scoreboard",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://johnatandias.github.io/scoreboard/",
   "dependencies": {
     "@types/jest": "24.0.18",
     "@types/node": "12.7.3",
@@ -21,6 +22,7 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "^3.1.0",
+    "gh-pages": "^3.1.0",
     "prettier": "^1.18.2",
     "typescript": "3.6.2"
   },
@@ -29,7 +31,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
