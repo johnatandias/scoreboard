@@ -15,10 +15,10 @@ const NoPlayers: React.FC = () => {
     <section className={css.noPlayers}>
       <span>{t('home:no-players')}</span>
     </section>
-  )
+  );
 };
 
-export const Home: React.FC<RouteComponentProps> = ({ history }) => {
+export const Home: React.FC<RouteComponentProps> = ({ history, match }) => {
   const players = useSelector((state: IStore) => state.playerState);
   const dispatch = useDispatch();
   const [t] = useTranslation();
@@ -28,7 +28,7 @@ export const Home: React.FC<RouteComponentProps> = ({ history }) => {
       <Header title={t('app:title')}>
         <Add color="white" onClick={() => dispatch(openAddPlayerModal)} />
         {Boolean(players.length > 1) && (
-          <Start onClick={() => history.push('/start')} />
+          <Start onClick={() => history.push(`${match.path}start`)} />
         )}
       </Header>
 
