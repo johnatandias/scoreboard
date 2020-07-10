@@ -2,7 +2,7 @@
   "name": "scoreboard",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://johnatandias.github.io/scoreboard/",
+  "homepage": "https://www.scoreboard.johnatandias.dev/",
   "dependencies": {
     "@types/jest": "26.0.4",
     "@types/node": "14.0.20",

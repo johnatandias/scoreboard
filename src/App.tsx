@@ -11,21 +11,17 @@ import i18n from 'i18next';
 
 i18n.use(initReactI18next).init({ ...config });
 
-const App: React.FC = () => {
-  const isProduction = process.env.NODE_ENV === 'production';
-  const BASE_ROUTE = isProduction ? '/scoreboard/' : '/';
-  return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <Router>
-          <Route path={`${BASE_ROUTE}`} exact component={Home} />
-          <Route path={`${BASE_ROUTE}start`} component={Start} />
-        </Router>
+const App: React.FC = () => (
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <Router>
+        <Route path={`/`} exact component={Home} />
+        <Route path={`/start`} component={Start} />
+      </Router>
 
-        <Modal />
-      </PersistGate>
-    </Provider>
-  );
-};
+      <Modal />
+    </PersistGate>
+  </Provider>
+);
 
 export default withTranslation()(App);
